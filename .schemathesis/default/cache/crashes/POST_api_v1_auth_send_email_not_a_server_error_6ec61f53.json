@@ -1,0 +1,84 @@
+{
+  "operation": "POST /api/v1/auth/send_email",
+  "method": "POST",
+  "path_template": "/api/v1/auth/send_email",
+  "fingerprint": "6ec61f53",
+  "case_id": "rnTnXN",
+  "code_sample": "curl -X POST -H 'Content-Type: application/json' -d '{\"email_addresses\": [\"\"]}' http://127.0.0.1:8000/api/v1/auth/send_email",
+  "sequence": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/api/v1/auth/send_email",
+      "url_template": "http://127.0.0.1:8000/api/v1/auth/send_email",
+      "headers": {
+        "User-Agent": "schemathesis/4.31.1",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept": "*/*",
+        "Connection": "keep-alive",
+        "X-Schemathesis-TestCaseId": "rnTnXN",
+        "Content-Type": "application/json",
+        "Content-Length": "25"
+      },
+      "response": {
+        "status_code": 500,
+        "headers": {
+          "date": "Fri, 16 Oct 2026 18:59:35 GMT",
+          "server": "uvicorn",
+          "content-length": "21",
+          "content-type": "text/plain; charset=utf-8"
+        },
+        "body": "Internal Server Error"
+      },
+      "link": null,
+      "checks": [
+        {
+          "name": "not_a_server_error",
+          "status": "failure",
+          "message": "Server error"
+        }
+      ],
+      "meta": {
+        "generation": {
+          "time": 0.0002965000021504238,
+          "mode": "positive"
+        },
+        "components": {
+          "BODY": "positive"
+        },
+        "phase": {
+          "name": "coverage",
+          "data": {
+            "type": "CoveragePhaseData",
+            "description": "Object with valid 'email_addresses' value: Valid array",
+            "location": null,
+            "parameter": "application/json",
+            "parameter_location": "BODY",
+            "scenario": "valid_object"
+          }
+        },
+        "pool_draws": [],
+        "pool_misses": [],
+        "semantic_draws": [],
+        "dictionary_draws": [],
+        "constants_draws": [],
+        "raw_containers": {}
+      },
+      "path": "/api/v1/auth/send_email",
+      "path_parameters": {},
+      "query": {},
+      "case_headers": {},
+      "cookies": {},
+      "case_body": {
+        "encoding": "json",
+        "value": {
+          "email_addresses": [
+            ""
+          ]
+        }
+      },
+      "media_type": "application/json",
+      "parent_index": null,
+      "auth_identity": null
+    }
+  ]
+}

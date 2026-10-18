@@ -1,0 +1,93 @@
+{
+  "operation": "PATCH /api/v1/books/{book_uid}",
+  "method": "PATCH",
+  "path_template": "/api/v1/books/{book_uid}",
+  "fingerprint": "a1b4c37b",
+  "case_id": "WBfJ65",
+  "code_sample": "curl -X PATCH -H 'Authorization: [Filtered]' http://127.0.0.1:8000/api/v1/books/0",
+  "sequence": [
+    {
+      "method": "PATCH",
+      "url": "http://127.0.0.1:8000/api/v1/books/0",
+      "url_template": "http://127.0.0.1:8000/api/v1/books/{book_uid}",
+      "headers": {
+        "User-Agent": "schemathesis/4.31.1",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept": "*/*",
+        "Connection": "keep-alive",
+        "Authorization": "[Filtered]",
+        "X-Schemathesis-TestCaseId": "WBfJ65",
+        "Content-Length": "0"
+      },
+      "response": {
+        "status_code": 401,
+        "headers": {
+          "date": "Fri, 16 Oct 2026 18:59:35 GMT",
+          "server": "uvicorn",
+          "www-authenticate": "[Filtered]",
+          "content-length": "30",
+          "content-type": "application/json"
+        },
+        "body": "{\"detail\":\"Not authenticated\"}"
+      },
+      "link": null,
+      "checks": [
+        {
+          "name": "status_code_conformance",
+          "status": "failure",
+          "message": "Undocumented HTTP status code\n\nReceived: 401\nDocumented: 200, 422"
+        }
+      ],
+      "meta": {
+        "generation": {
+          "time": 4.739999712910503e-05,
+          "mode": "negative"
+        },
+        "components": {
+          "PATH": "positive",
+          "HEADER": "positive",
+          "BODY": "negative"
+        },
+        "phase": {
+          "name": "coverage",
+          "data": {
+            "type": "CoveragePhaseData",
+            "description": "Missing request body",
+            "location": null,
+            "parameter": null,
+            "parameter_location": "BODY",
+            "scenario": "missing_parameter"
+          }
+        },
+        "pool_draws": [],
+        "pool_misses": [],
+        "semantic_draws": [],
+        "dictionary_draws": [],
+        "constants_draws": [],
+        "raw_containers": {
+          "PATH": {
+            "book_uid": "0"
+          },
+          "HEADER": {
+            "Authorization": "Bearer "
+          }
+        }
+      },
+      "path": "/api/v1/books/{book_uid}",
+      "path_parameters": {
+        "book_uid": "0"
+      },
+      "query": {},
+      "case_headers": {
+        "Authorization": "[Filtered]"
+      },
+      "cookies": {},
+      "case_body": {
+        "encoding": "none"
+      },
+      "media_type": null,
+      "parent_index": null,
+      "auth_identity": null
+    }
+  ]
+}
